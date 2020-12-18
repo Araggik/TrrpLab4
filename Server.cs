@@ -9,7 +9,7 @@ using System.Net.Sockets;
 
 namespace Server
 {
-    class Program
+    class Server
     {
         public static int count_ports = 3;
         public static int current_port = 0;
@@ -37,6 +37,7 @@ namespace Server
                     current_adress = ip.ToString();
                 }
             }
+
             bool notfind = true;
             for (int i = 0; i < count_ports && notfind; i++)
             {
@@ -56,7 +57,9 @@ namespace Server
                 {
                     dis_client.Close();
                 }
-            }                     
+            } 
+            
+
             Console.WriteLine(current_adress);
             Console.ReadKey();
         }
